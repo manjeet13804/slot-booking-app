@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Calendar, Clock, CheckCircle } from 'lucide-react';
 
 const App = () => {
@@ -9,12 +9,7 @@ const App = () => {
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
-  const formatDate = (date) => {
-    const d = new Date(date);
-    return d.toISOString().split('T')[0];
-  };
-
-  const fetchAvailableSlots = async (date) => {
+   const fetchAvailableSlots = async (date) => {
     setLoading(true);
     setError('');
     try {
